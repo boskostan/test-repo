@@ -15,7 +15,7 @@ namespace demoApplication {
 
             protected void Button1_Click(object sender, EventArgs e) {
                   string name = TextBox1.Text;
-                  Response.Write("Hello " + name);
+                  Response.Write("Hi " + name);
             }
       }
 }
