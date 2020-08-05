@@ -14,7 +14,7 @@ namespace demoApplication {
             }
 
             protected void Button1_Click(object sender, EventArgs e) {
-                  Response.Write("Hi " + TextBox1.Text);
+                  Response.Write("Hello " + TextBox1.Text);
             }
       }
 }
