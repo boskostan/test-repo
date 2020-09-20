@@ -8,7 +8,7 @@ inputs:
     default: ''
   api_token:
     required: true
-    description: 'Provide API token"
+    description: 'Provide API token'
     default: ''
 runs:
   using: "composite"
