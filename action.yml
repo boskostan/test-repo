@@ -5,4 +5,5 @@ runs:
   using: "composite"
   steps: 
     - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
+    shell: cmd
 
