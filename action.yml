@@ -1,11 +1,6 @@
 name: 'Test Action'
 description: 'Test'
 author: 'test'
-inputs:
-  api_key:
-    required: true
-    description: 'Provide ThunderScan API key'
-    default: ''
 runs:
   using: "composite"
   steps: 
