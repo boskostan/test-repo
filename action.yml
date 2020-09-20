@@ -1,6 +1,11 @@
 name: 'Test Action'
 description: 'Test'
 author: 'test'
+inputs:
+  target:
+    required: true
+    description: 'Provide target'
+    default: ''
 runs:
   using: "composite"
   steps: 
