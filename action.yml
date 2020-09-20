@@ -18,15 +18,15 @@ inputs:
     required: false
     description: 'Provide one or more (comma separated) ThunderScan SAST engine IDs to be used for the analysis'
     default: ''
-  shell:
-    required: true
-    description: 'Provide shell to be used for running the client (bash or powershell)'
-    default: 'powershell'
 runs:
   using: "composite"
-  steps: 
+  steps:
     - run: ${{ inputs.client_path }}
-      shell: ${{ inputs.shell }}
+      shell: powershell
+      if: runner.os == 'Windows'
+    - run: ${{ inputs.client_path }}
+      shell: bash
+      if: runner.os == 'Linux'
       env:
         API_TOKEN: ${{ inputs.api_token }}
         API_URL: ${{ inputs.api_url }}
