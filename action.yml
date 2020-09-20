@@ -9,7 +9,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
+    - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local ${{ inputs.target }}
       shell: cmd
     - run: echo "test123"
       shell: cmd
