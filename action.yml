@@ -21,18 +21,17 @@ inputs:
 runs:
   using: "composite"
   steps:
+      if: runner.os == 'Windows'
     - run: ${{ inputs.client_path }}
       shell: powershell
       env:
         API_TOKEN: ${{ inputs.api_token }}
         API_URL: ${{ inputs.api_url }}
         ENGINES: ${{ inputs.engines }}
-      if: runner.os == 'Windows'
+      if: runner.os == 'Linux'
     - run: ${{ inputs.client_path }}
       shell: bash
       env:
         API_TOKEN: ${{ inputs.api_token }}
         API_URL: ${{ inputs.api_url }}
         ENGINES: ${{ inputs.engines }}
-      if: runner.os == 'Linux'
-
