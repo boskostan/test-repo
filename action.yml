@@ -1,21 +1,33 @@
-name: 'Test Action'
-description: 'Test'
-author: 'test'
+name: 'DefenseCode ThunderScan Action'
+description: 'Source code scanning for vulnerabilities using ThunderScan SAST solution API client'
+author: 'DefenseCode'
 inputs:
-  target:
+  client_path:
     required: true
-    description: 'Provide target'
+    description: 'Provide ThunderScan API client path'
+    default: ''
+  api_url:
+    required: true
+    description: 'Provide ThunderScan API URL'
     default: ''
   api_token:
     required: true
-    description: 'Provide API token'
+    description: 'Provide ThunderScan API Token'
     default: ''
+  engines:
+    required: false
+    description: 'Provide one or more (comma separated) ThunderScan SAST engine IDs to be used for the analysis'
+    default: ''
+  shell:
+    required: true
+    description: 'Provide shell to be used for running the client (bash or powershell)'
+    default: 'powershell'
 runs:
   using: "composite"
   steps: 
-    - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local ${{ inputs.target }}
-      shell: powershell
+    - run: ${{ inputs.client_path }}/tsactioncli
+      shell: ${{ inputs.shell }}
       env:
         API_TOKEN: ${{ inputs.api_token }}
-    - run: echo "test123"
-      shell: cmd
+        API_URL: ${{ inputs.api_url }}
+        ENGINES: ${{ inputs.engines }}
