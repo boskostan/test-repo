@@ -10,6 +10,6 @@ runs:
   using: "composite"
   steps: 
     - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local ${{ inputs.target }}
-      shell: cmd
+      shell: powershell
     - run: echo "test123"
       shell: cmd
