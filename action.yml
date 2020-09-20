@@ -8,8 +8,8 @@ inputs:
     default: ''
 runs:
   using: "composite"
-    steps: 
-      run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
+  steps: 
+    run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
   env:
     API_URL: "${{ inputs.api_key }}"
       
