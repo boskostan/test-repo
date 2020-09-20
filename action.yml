@@ -17,5 +17,3 @@ runs:
       shell: powershell
     - run: echo "test123"
       shell: cmd
-  env:
-    API_TOKEN: "${{ inputs.api_token }}"
