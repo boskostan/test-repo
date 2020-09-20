@@ -22,7 +22,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: ThunderScan
-      run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
+      uses: boskostan/test-repo
 
     - name: Expose report
       uses: actions/upload-artifact@v2
