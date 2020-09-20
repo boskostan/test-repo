@@ -6,6 +6,10 @@ inputs:
     required: true
     description: 'Provide target'
     default: ''
+  api_token:
+    required: true
+    description: 'Provide API token"
+    default: ''
 runs:
   using: "composite"
   steps: 
@@ -13,3 +17,5 @@ runs:
       shell: powershell
     - run: echo "test123"
       shell: cmd
+  env:
+    API_TOKEN: "${{ inputs.api_token }}"
