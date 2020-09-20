@@ -25,7 +25,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: ${{ inputs.client_path }}/tsactioncli
+    - run: ${{ inputs.client_path }}
       shell: ${{ inputs.shell }}
       env:
         API_TOKEN: ${{ inputs.api_token }}
