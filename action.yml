@@ -1,0 +1,15 @@
+name: 'Test Action'
+description: 'Test'
+author: 'test'
+inputs:
+  api_key:
+    required: true
+    description: 'Provide ThunderScan API key'
+    default: ''
+  env:
+    API_URL: "${{ inputs.api_key }}"
+runs:
+  using: "composite"
+    steps: 
+      run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local $pwd
+      
