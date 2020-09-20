@@ -22,7 +22,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: ThunderScan
-      uses: boskostan/test-repo@
+      uses: boskostan/test-repo@v1
 
     - name: Expose report
       uses: actions/upload-artifact@v2
