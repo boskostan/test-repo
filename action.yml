@@ -15,5 +15,7 @@ runs:
   steps: 
     - run: C:/thunderscan-cli/tsapiclient.exe --waitfinished --threshold high:1,medium:1,low:1 --local ${{ inputs.target }}
       shell: powershell
+      env:
+        API_TOKEN: ${{ inputs.api_token }}
     - run: echo "test123"
       shell: cmd
