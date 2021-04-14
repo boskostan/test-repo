@@ -17,7 +17,7 @@ jobs:
           command: |
             ./thunderscan-cli --upload repository
       - store_artifacts:
-          path: ./thunderscan-sarif.json
+          path: ./thunderscan-json-report.json
       - store_artifacts:
           path: ./thunderscan-html-report.html
 
