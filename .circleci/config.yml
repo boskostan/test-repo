@@ -11,11 +11,11 @@ jobs:
           name: Download/Extract ThunderScan API CLI-Client
           command: |
             wget https://download.defensecode.com/latest/clients/tscircle-cli.tar.gz -O tscircle-cli.tar.gz
-            tar xvzf thunderscan-cli.tar.gz
+            tar xvzf tscircle-cli.tar.gz
       - run:
           name: ThunderScan CLI Client Scan
           command: |
-            ./thunderscan-cli --upload repository
+            ./tscircle-cli --upload repository
       - store_artifacts:
           path: ./thunderscan-json-report.json
       - store_artifacts:
