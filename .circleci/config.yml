@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Download/Extract ThunderScan API CLI-Client
           command: |
-            wget https://download.defensecode.com/latest/archives-tar/thunderscan-cli.tar.gz -O thunderscan-cli.tar.gz
+            wget https://download.defensecode.com/latest/clients/tscircle-cli.tar.gz -O tscircle-cli.tar.gz
             tar xvzf thunderscan-cli.tar.gz
       - run:
           name: ThunderScan CLI Client Scan
