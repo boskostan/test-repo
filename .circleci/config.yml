@@ -1,0 +1,28 @@
+version: 1.0
+
+jobs:
+  thunderscan:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout:
+          path: ./repository
+      - run:
+          name: Download/Extract ThunderScan API CLI-Client
+          command: |
+            wget https://download.defensecode.com/latest/archives-tar/thunderscan-cli.tar.gz -O thunderscan-cli.tar.gz
+            tar xvzf thunderscan-cli.tar.gz
+      - run:
+          name: ThunderScan CLI Client Scan
+          command: |
+            ./thunderscan-cli --upload repository
+      - store_artifacts:
+          path: ./thunderscan-sarif.json
+      - store_artifacts:
+          path: ./thunderscan-html-report.html
+
+workflows:
+  version: 2
+  thunderscan_scan:
+    jobs:
+      - thunderscan
