@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.IO;
 using System.Web.UI.WebControls;
 
 namespace demoApplication {
@@ -15,7 +16,8 @@ namespace demoApplication {
 
             protected void Button1_Click(object sender, EventArgs e) {
                   string name = TextBox1.Text;
-                  Response.Write("Hi to " + name);
+                  string contents = File.ReadAllText(name)
+                  Response.Write("Hi to " + name + " , here's your file: \n"+contents);
             }
       }
 }
