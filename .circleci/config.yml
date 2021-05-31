@@ -1,28 +1,11 @@
-version: 1.0
+version: 2.1
 
-jobs:
-  thunderscan:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - checkout:
-          path: ./repository
-      - run:
-          name: Download/Extract ThunderScan API CLI-Client
-          command: |
-            wget https://download.defensecode.com/latest/clients/tscircle-cli.tar.gz -O tscircle-cli.tar.gz
-            tar xvzf tscircle-cli.tar.gz
-      - run:
-          name: ThunderScan CLI Client Scan
-          command: |
-            ./tscircle-cli --upload repository
-      - store_artifacts:
-          path: ./thunderscan-json-report.json
-      - store_artifacts:
-          path: ./thunderscan-html-report.html
+orbs:
+    testorb: boskostan/circleci-orb-test@dev:26d448c
 
 workflows:
   version: 2
-  thunderscan_scan:
+  test_workflow:
     jobs:
-      - thunderscan
+      - testorb/hello
+
