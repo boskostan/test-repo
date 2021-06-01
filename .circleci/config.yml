@@ -11,7 +11,7 @@ workflows:
           report: true
           report-filename: thunderscan-test-report
           report-format: html,json
-          scan-name: test-scan
+          scan-name: "$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
           excluded-vt: "0"
 
 
