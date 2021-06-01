@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-    testorb: boskostan/circleci-orb-test@dev:d2ac26d
+    testorb: boskostan/circleci-orb-test@dev:f9a0732
 
 workflows:
   build:
