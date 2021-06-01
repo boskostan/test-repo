@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-    testorb: boskostan/circleci-orb-test@dev:1e5aab3
+    testorb: boskostan/circleci-orb-test@dev:0d6d337
 
 workflows:
   build:
@@ -12,5 +12,6 @@ workflows:
           report-filename: thunderscan-test-report
           report-format: html,json
           scan-name: test-scan
+          excluded-vt: "0"
 
 
