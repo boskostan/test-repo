@@ -1,13 +1,13 @@
 version: 2.1
 
 orbs:
-    testorb: boskostan/circleci-orb-test@dev:6f9ca5b
+    testorb: boskostan/circleci-orb-test@dev:c8593ad
 
 workflows:
   build:
     jobs:
       - testorb/hello:
-          engines: "1"
+          engines: "2"
           report: true
           report-filename: thunderscan-test-report
           report-format: html,json
