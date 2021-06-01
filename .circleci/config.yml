@@ -1,16 +1,20 @@
 version: 2.1
 
 orbs:
-    thunderscan: defensecode/thunderscan@dev:69a5fa5
+    thunderscan: defensecode/thunderscan@1.0.1
 
 workflows:
   build:
     jobs:
       - thunderscan/scan:
-          engines: "2"
           report: true
-          report-filename: thunderscan-test-report
+          report-filename: thunderscan-report
           report-format: html,json
           scan-name: "$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
+          post-run:
+            - store_artifacts:
+                path: ./thunderscan-report.json
+            - store_artifacts:
+                path: ./thunderscan-report.html
 
 
