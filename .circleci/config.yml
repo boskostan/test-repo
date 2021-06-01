@@ -1,17 +1,16 @@
 version: 2.1
 
 orbs:
-    testorb: boskostan/circleci-orb-test@dev:379f1b4
+    thunderscan: defensecode/thunderscan@dev:69a5fa5
 
 workflows:
   build:
     jobs:
-      - testorb/scan:
+      - thunderscan/scan:
           engines: "2"
           report: true
           report-filename: thunderscan-test-report
           report-format: html,json
           scan-name: "$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
-          excluded-vt: "0"
 
 
