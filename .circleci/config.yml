@@ -24,6 +24,7 @@ jobs:
           path: ./thunderscan-report.html
 
 workflows:
+  version: 2
   thunderscan_scan:
     jobs:
       - thunderscan
