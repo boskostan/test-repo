@@ -12,12 +12,10 @@ jobs:
           command: |
             wget https://download.defensecode.com/latest/clients/tscli.tar.gz -O tscli.tar.gz
             tar xvzf tscli.tar.gz
-            pwd
-            ls
       - run:
           name: ThunderScan Scan
           command: |
-            ./tscli --upload ../repository --report --formats "html,json" --filename "thunderscan-report" --threshold "high:1"
+            ./tscli --upload ./repository --report --formats "html,json" --filename "thunderscan-report" --threshold "high:1"
       - store_artifacts:
           path: ./thunderscan-report.json
       - store_artifacts:
