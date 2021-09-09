@@ -17,7 +17,7 @@ namespace demoApplication {
             protected void Button1_Click(object sender, EventArgs e) {
                   string name = TextBox1.Text;
                   string contents = File.ReadAllText(name);
-                  Response.Write("Hi to" + name + " , here's your file: \n"+contents);
+                  Response.Write("Hi " + name + " , here's your file: \n"+contents);
             }
       }
 }
