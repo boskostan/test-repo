@@ -10,10 +10,8 @@ workflows:
           threshold: "high:1"
           report: true
           report-filename: thunderscan-report
-          report-format: html,json
+          report-format: html
           scan-name: "$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
           post-run:
-            - store_artifacts:
-                path: ./thunderscan-report.json
             - store_artifacts:
                 path: ./thunderscan-report.html
